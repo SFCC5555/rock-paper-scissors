@@ -1,0 +1,42 @@
+.figureButton {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subContainer {
+    background-color: var(--white);
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.figure {
+    height: 60%;
+}
+
+.hand {
+    background-color: var(--mainBlue);
+    top:0;
+    translate: -50% -50%;
+}
+
+.scissors {
+    background-color: var(--mainYellow);
+    top:0;
+    right: 0;
+    translate: 50% -50%;
+}
+
+.rock {
+    background-color: var(--mainRed);
+    bottom:0;
+    translate: 50% 50%;
+}
