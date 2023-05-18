@@ -15,7 +15,7 @@ const Results = () => {
   return (
     <>
       {
-        results&&<section className='w-full sm:w-2/3 flex flex-col items-center justify-between'>
+        results&&<section className='w-full sm:w-2/3 flex flex-col items-center justify-between gap-10'>
                     <div className='w-full flex items-center justify-between'>
                       <div className='flex flex-col items-center text-white gap-5 sm:flex-col-reverse'>
                         <div className={`figureImage handResult`}><div className='subContainer'><img className='figure' src={paper} alt="Paper" /></div></div>
@@ -27,7 +27,7 @@ const Results = () => {
                       </div>
                     </div>
                     <div className='flex flex-col items-center gap-2'>
-                      <h1 className='text-white text-4xl' >YOU LOSE</h1>
+                      <h1 className='text-white text-6xl' >YOU LOSE</h1>
                       <button className='w-full bg-white rounded-md py-2 letterSpacing2px' style={{color:'var(--darkText)'}} >PLAY AGAIN</button>
                     </div>
                  </section>
