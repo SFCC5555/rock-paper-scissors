@@ -4,7 +4,7 @@ export const AppContext = createContext({});
 
 const AppContextProvider = ({children})=>{
 
-    const [proMode,setProMode] = useState(false);
+    const [proMode,setProMode] = useState(true);
     
     const useScore = () =>{
         const [score,setScore] = useState(0);

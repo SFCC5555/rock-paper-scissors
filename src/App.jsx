@@ -13,8 +13,8 @@ function App() {
       <Score />
       <Figures />
       <section className='w-full flex justify-between items-center'>
-        <Rules />
         <Mode />
+        <Rules />
       </section>
 
     </AppContextProvider>
