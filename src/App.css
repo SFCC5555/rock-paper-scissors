@@ -19,14 +19,50 @@
     align-items: center;
 }
 
+.figureButton:hover .subContainer {
+    box-shadow:  0.1em -0.2em 0px rgb(227, 226, 226),
+    0em 0em 20px var(--white);
+    transition-duration: 500ms;
+}
+
 .figure {
     height: 60%;
 }
 
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .figureButton:hover .figure {
+        animation: figureAnimation infinite 200ms linear;
+    }
+}
+
+@keyframes figureAnimation {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(10deg);}
+    100% {transform: rotate(0deg);}
+}
+
+
+
 .hand {
-    background-color: var(--mainBlue);
+    background-color: var(--secondBlue);
+    box-shadow:  -0.1em 0.25em 0px var(--mainBlue);
     top:0;
     translate: -50% -50%;
+    animation-name: handAnimation;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes handAnimation {
+    0%{translate: -50% -50%;}
+    30%{translate: -50% -50%;}
+    33%{translate: 150% -50%;}
+    60%{translate: 150% -50%;}
+    63%{translate: 50% 150%;}
+    97%{translate: 50% 150%;}
+    100%{translate: -50% -50%;}    
 }
 
 .handPro {
@@ -35,47 +71,174 @@
     top:0;
     right: 0;
     translate: 50% 25%;
+    animation-name: handProAnimation;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes handProAnimation {
+    0%{translate: 50% 25%;}
+    20%{translate: 50% 25%;}
+    21%{translate: 25% 150%;}
+    40%{translate: 25% 150%;}
+    41%{translate: -125% 150%;}
+    60%{translate: -125% 150%;}
+    61%{translate: -150% 25%;}
+    80%{translate: -150% 25%;}
+    81%{translate: -50% -50%;}
+    99%{translate: -50% -50%;}
+    100%{translate: 50% 25%;}    
 }
 
 .scissors {
-    background-color: var(--mainYellow);
+    background-color: var(--secondYellow);
+    box-shadow:  -0.1em 0.25em 0px var(--mainYellow);
     top:0;
     right: 0;
     translate: 50% -50%;
+    animation-name: scissorsAnimation;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scissorsAnimation {
+    0%{translate: 50% -50%;}
+    30%{translate: 50% -50%;}
+    33%{translate: -50% 150%;}
+    60%{translate: -50% 150%;}
+    63%{translate: -150% -50%;}
+    97%{translate: -150% -50%;}
+    100%{translate: 50% -50%;}    
 }
 
 .scissorsPro {
-    background-color: var(--mainYellow);
+    background-color: var(--secondYellow);
+    box-shadow:  -0.1em 0.25em 0px var(--mainYellow);
     top:0;
     right: 50%;
     translate: 50% -50%;
-
+    animation-name: scissorsProAnimation;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
 }
 
+@keyframes scissorsProAnimation {
+    0%{translate: 50% -50%;}
+    20%{translate: 50% -50%;}
+    21%{translate: 150% 25%;}
+    40%{translate: 150% 25%;}
+    41%{translate: 125% 150%;}
+    60%{translate: 125% 150%;}
+    61%{translate: -25% 150%;}
+    80%{translate: -25% 150%;}
+    81%{translate: -50% 25%;}
+    99%{translate: -50% 25%;}
+    100%{translate: 50% -50%;}    
+}
+
+
 .rock {
-    background-color: var(--mainRed);
+    background-color: var(--secondRed);
+    box-shadow:  -0.1em 0.25em 0px var(--mainRed);
     bottom:0;
     translate: 50% 50%;
+    animation-name: rockAnimation;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rockAnimation {
+    0%{translate: 50% 50%;}
+    30%{translate: 50% 50%;}
+    33%{translate: -50% -150%;}
+    60%{translate: -50% -150%;}
+    63%{translate: 150% -150%;}
+    97%{translate: 150% -150%;}
+    100%{translate: 50% 50%;}    
 }
 
 .rockPro {
-    background-color: var(--mainRed);
+    background-color: var(--secondRed);
+    box-shadow:  -0.1em 0.25em 0px var(--mainRed);
     bottom:0;
     right: 0;
     translate: 25% 50%;
+    animation-name: rockProAnimation;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rockProAnimation {
+    0%{translate: 25% 50%;}
+    20%{translate: 25% 50%;}
+    21%{translate: -125% 50%;}
+    40%{translate: -125% 50%;}
+    41%{translate: -150% -75%;}
+    60%{translate: -150% -75%;}
+    61%{translate: -50% -150%;}
+    80%{translate: -50% -150%;}
+    81%{translate: 50% -75%;}
+    99%{translate: 50% -75%;}
+    100%{translate: 25% 50%;}    
 }
 
 .spockPro {
-    background-color: var(--mainCyan);
+    background-color: var(--secondCyan);
+    box-shadow:  -0.1em 0.25em 0px var(--mainCyan);
     top:0;
     left: 0;
     translate: -50% 25%;
+    animation-name: spockProAnimation;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spockProAnimation {
+    0%{translate: -50% 25%;}
+    20%{translate: -50% 25%;}
+    21%{translate: 50% -50%;}
+    40%{translate: 50% -50%;}
+    41%{translate: 150% 25%;}
+    60%{translate: 150% 25%;}
+    61%{translate: 125% 150%;}
+    80%{translate: 125% 150%;}
+    81%{translate: -25% 150%;}
+    99%{translate: -25% 150%;}
+    100%{translate: -50% 25%;}    
 }
 
 .lizardPro {
-    background-color: var(--mainPurple);
+    background-color: var(--secondPurple);
+    box-shadow:  -0.1em 0.25em 0px var(--mainPurple);
     bottom:0;
     left: 0;
     translate: -25% 50%;
+    animation-name: lizardProAnimation;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
 }
 
+@keyframes lizardProAnimation {
+    0%{translate: -25% 50%;}
+    20%{translate: -25% 50%;}
+    21%{translate: -50% -75%;}
+    40%{translate: -50% -75%;}
+    41%{translate: 50% -150%;}
+    60%{translate: 50% -150%;}
+    61%{translate: 150% -75%;}
+    80%{translate: 150% -75%;}
+    81%{translate: 125% 50%;}
+    99%{translate: 125% 50%;}
+    100%{translate: -25% 50%;}    
+}
+
+.selectButton {
+    color: var(--white);
+    border-color: var(--headerOutline);
+}
+
+.selectButton:hover {
+    border-color: var(--white);
+    box-shadow: 0em 0em 10px var(--white);
+    opacity: 75%;
+}

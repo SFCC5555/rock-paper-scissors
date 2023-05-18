@@ -11,7 +11,9 @@ import lizard from '../assets/images/icon-lizard.svg'
 
 const Figures = () => {
 
-  const {proMode} = useContext(AppContext);
+  const {mode} = useContext(AppContext);
+
+  const {proMode} = mode;
 
   return (
     <section className='relative h-1/4 sm:h-1/3' >

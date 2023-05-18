@@ -1,28 +1,17 @@
 import { createContext, useState } from "react";
+import { useMode } from "../../Hooks/useMode";
+import { useScore } from "../../Hooks/useScore";
 
 export const AppContext = createContext({});
 
 const AppContextProvider = ({children})=>{
 
-    const [proMode,setProMode] = useState(true);
-    
-    const useScore = () =>{
-        const [score,setScore] = useState(0);
-
-        const increase = () => {
-            setScore(prev=>prev+1)
-        }
-        
-        return {
-            score,
-            increase
-        }
-    }
+    const mode = useMode();
     
     const scoreRegular = useScore();
     const scorePro = useScore();
 
-    return <AppContext.Provider value={{proMode,setProMode,scoreRegular,scorePro}}>
+    return <AppContext.Provider value={{mode,scoreRegular,scorePro}}>
         {children}
     </AppContext.Provider>
 }

@@ -7,7 +7,9 @@ import proLogo from '../assets/images/logo-bonus.svg'
 
 const Score = () => {
 
-  const {proMode,scorePro,scoreRegular}= useContext(AppContext);
+  const {mode,scorePro,scoreRegular}= useContext(AppContext);
+
+  const {proMode} = mode;
 
   return (
     <section className='flex justify-between items-center border-2 p-4 rounded-md h-32 w-full sm:w-2/3' style={{borderColor:'var(--headerOutline)'}} >
