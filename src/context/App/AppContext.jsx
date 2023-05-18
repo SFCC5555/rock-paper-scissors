@@ -11,7 +11,18 @@ const AppContextProvider = ({children})=>{
     const scoreRegular = useScore();
     const scorePro = useScore();
 
-    return <AppContext.Provider value={{mode,scoreRegular,scorePro}}>
+    const [rulesModal,setRulesModal] = useState(false);
+
+    const [results,setResults] = useState(true);
+
+    return <AppContext.Provider value={{mode,
+                                        scoreRegular,
+                                        scorePro,
+                                        rulesModal,
+                                        setRulesModal,
+                                        results,
+                                        setResults
+                                        }}>
         {children}
     </AppContext.Provider>
 }

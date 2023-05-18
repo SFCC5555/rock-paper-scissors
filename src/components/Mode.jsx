@@ -10,7 +10,7 @@ const Mode = () => {
 
 
   return (
-    <button onClick={changeMode} className='selectButton rounded-lg border-2 py-1 px-8 letterSpacing2px'>{proMode?'NOOB MODE':'PRO MODE'}</button>
+    <button onClick={changeMode} className='selectButton rounded-lg border-2 py-1 px-8 letterSpacing2px'>{proMode?'NORMAL MODE':'PRO MODE'}</button>
   )
 }
 

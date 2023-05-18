@@ -1,0 +1,16 @@
+
+.figureImage {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.handResult {
+    background-color: var(--secondBlue);
+    box-shadow:  -0.1em 0.25em 0px var(--mainBlue);
+}
+
