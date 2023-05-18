@@ -12,7 +12,7 @@ const Figures = () => {
   const {proMode} = useContext(AppContext);
 
   return (
-    <section className='relative h-1/3' >
+    <section className='relative h-1/4 sm:h-1/3' >
         <img className='h-full' src={proMode?pentagon:triangle} alt={proMode?'Pentagon':'Triangle'} />
         <button className='figureButton hand'><div className='subContainer'><img className='figure' src={paper} alt="Paper" /></div></button>
         <button className='figureButton scissors'><div className='subContainer'><img className='figure' src={scissors} alt="Scissors" /></div></button>
