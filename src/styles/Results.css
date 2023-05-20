@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
     
 }
 
@@ -49,7 +50,7 @@
 
 .figureResult {
     animation-name: figureResultAnimation;
-    animation-duration: 2s;
+    animation-duration: 1s;
     position: absolute;
 }
 
@@ -61,3 +62,40 @@
     100%{width: 130px;height: 130px;}
     
 }
+
+.winner {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow:  0px 0px 50px white;
+    background-color: var(--secondBody);
+    animation-name: winnerAnimation;
+    animation-duration: 2s;
+    opacity: 35%;
+}
+
+
+@keyframes winnerAnimation {
+
+    0%{opacity: 0%;}
+    50%{opacity: 0%;}
+    90%{opacity: 40%;}
+    100%{opacity: 35%;}
+    
+}
+
+.resultSection {
+    animation-name: resultSectionAnimation;
+    animation-duration: 2.5s;
+}
+
+
+@keyframes resultSectionAnimation {
+
+    0%{opacity: 0%;}
+    60%{opacity: 0%;}
+    100%{opacity: 100%;}
+    
+}
+

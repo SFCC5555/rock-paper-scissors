@@ -27,10 +27,11 @@ const Figures = () => {
 
     if (figurePicked.beats.findIndex(b=>b===figurePickedHouse.name)!==-1) {
       setDuelResult('WIN');
-      proMode?scorePro.increase():scoreRegular.increase();
+      setTimeout(proMode?scorePro.increase:scoreRegular.increase,2000);
+
     } else if (figurePickedHouse.beats.findIndex(b=>b===figurePicked.name)!==-1) {
       setDuelResult('LOSE');
-      proMode?scorePro.reset():scoreRegular.reset();
+      setTimeout(proMode?scorePro.reset:scoreRegular.reset,2000);
     } else {
       setDuelResult('DRAW');
     }
