@@ -8,28 +8,49 @@ import scissors from '../assets/images/icon-scissors.svg';
 import rock from '../assets/images/icon-rock.svg';
 import spock from '../assets/images/icon-spock.svg';
 import lizard from '../assets/images/icon-lizard.svg';
+import {data} from '../data'
 
 const Figures = () => {
 
-  const {mode,results} = useContext(AppContext);
+  const {mode,setResults,setYourFigure,setHouseFigure,setDuelResult,scorePro,scoreRegular} = useContext(AppContext);
 
   const {proMode} = mode;
 
-  return (
+  function play(e) {
 
-      <>
-        {!results && 
-        <section className='relative h-1/4 sm:h-1/3' >
-          <img className='h-full' src={proMode?pentagon:triangle} alt={proMode?'Pentagon':'Triangle'} />
-          <button className={`figureButton ${proMode?'handPro':'hand'}`}><div className='subContainer'><img className='figure' src={paper} alt="Paper" /></div></button>
-          <button className={`figureButton ${proMode?'scissorsPro':'scissors'}`}><div className='subContainer'><img className='figure' src={scissors} alt="Scissors" /></div></button>
-          <button className={`figureButton ${proMode?'rockPro':'rock'}`}><div className='subContainer'><img className='figure' src={rock} alt="Rock" /></div></button>
-          {proMode&&<button className={`figureButton spockPro`}><div className='subContainer'><img className='figure' src={spock} alt="Spock" /></div></button>}
-          {proMode&&<button className={`figureButton lizardPro`}><div className='subContainer'><img className='figure' src={lizard} alt="Lizard" /></div></button>}
-        </section>}
+    const n = proMode?5:3;
+    
+    const figurePickedHouse = data[Math.floor(Math.random()*n)]
 
-      </>
+    const figurePicked = data.find(f=>f.name===e.target.id)
 
+
+    if (figurePicked.beats.findIndex(b=>b===figurePickedHouse.name)!==-1) {
+      setDuelResult('WIN');
+      proMode?scorePro.increase():scoreRegular.increase();
+    } else if (figurePickedHouse.beats.findIndex(b=>b===figurePicked.name)!==-1) {
+      setDuelResult('LOSE');
+      proMode?scorePro.reset():scoreRegular.reset();
+    } else {
+      setDuelResult('DRAW');
+    }
+
+    setHouseFigure(figurePickedHouse)
+  
+    setYourFigure(figurePicked)
+
+    setResults(true);
+
+  }
+
+  return (<section className='relative h-1/4 sm:h-1/3' >
+            <img className='h-full' src={proMode?pentagon:triangle} alt={proMode?'Pentagon':'Triangle'} />
+            <button id='paper' onClick={play} className={`figureButton ${proMode?'paperPro':'paper'}`}><div id='paper' className='subContainer'><img id='paper' className='figure' src={paper} alt="Paper" /></div></button>
+            <button id='scissors' onClick={play} className={`figureButton ${proMode?'scissorsPro':'scissors'}`}><div id='scissors' className='subContainer'><img id='scissors' className='figure' src={scissors} alt="Scissors" /></div></button>
+            <button id='rock' onClick={play} className={`figureButton ${proMode?'rockPro':'rock'}`}><div id='rock' className='subContainer'><img id='rock' className='figure' src={rock} alt="Rock" /></div></button>
+            {proMode&&<button id='spock' onClick={play} className={`figureButton spockPro`}><div id='spock' className='subContainer'><img id='spock' className='figure' src={spock} alt="Spock" /></div></button>}
+            {proMode&&<button id='lizard' onClick={play} className={`figureButton lizardPro`}><div id='lizard' className='subContainer'><img id='lizard' className='figure' src={lizard} alt="Lizard" /></div></button>}
+        </section>
   )
 }
 

@@ -7,10 +7,15 @@ const useScore = () =>{
     const increase = () => {
         setScore(prev=>prev+1)
     }
+
+    const reset = () => {
+        setScore(0);
+    }
     
     return {
         score,
-        increase
+        increase,
+        reset
     }
 }
 

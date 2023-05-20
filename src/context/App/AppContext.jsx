@@ -13,7 +13,13 @@ const AppContextProvider = ({children})=>{
 
     const [rulesModal,setRulesModal] = useState(false);
 
-    const [results,setResults] = useState(true);
+    const [results,setResults] = useState(false);
+
+    const [yourFigure,setYourFigure] = useState({});
+    
+    const [houseFigure,setHouseFigure] = useState({});
+
+    const [duelResult,setDuelResult] = useState('');
 
     return <AppContext.Provider value={{mode,
                                         scoreRegular,
@@ -21,7 +27,13 @@ const AppContextProvider = ({children})=>{
                                         rulesModal,
                                         setRulesModal,
                                         results,
-                                        setResults
+                                        setResults,
+                                        yourFigure,
+                                        setYourFigure,
+                                        houseFigure,
+                                        setHouseFigure,
+                                        duelResult,
+                                        setDuelResult
                                         }}>
         {children}
     </AppContext.Provider>
