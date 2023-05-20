@@ -16,7 +16,7 @@ const RulesModal = () => {
       <>
       {
         rulesModal && 
-        <div className='absolute top-0 w-full h-full bg-black/50 flex justify-center items-center'>
+        <div className='absolute top-0 w-full h-full bg-black/50 flex justify-center items-center z-10'>
                         
           <div className='bg-white h-full w-full sm:w-1/3 sm:h-auto px-4 pt-8 pb-6 opacity-100 flex flex-col items-center justify-between sm:rounded-md sm:-translate-y-10'>
             <div className='sm:flex sm:items-center sm:justify-between sm:w-full'>
