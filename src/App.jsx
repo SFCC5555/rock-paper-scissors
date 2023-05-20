@@ -5,6 +5,7 @@ import { Rules } from './components/Rules';
 import { Mode } from './components/Mode';
 import { RulesModal } from './components/RulesModal';
 import { Main } from './components/Main';
+import { HighScoreModal } from './components/HighScoreModal';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Rules />
       </section>
       <RulesModal />
+      <HighScoreModal />
     </AppContextProvider>
   )
 }

@@ -12,7 +12,7 @@ import {data} from '../data'
 
 const Figures = () => {
 
-  const {mode,setResults,setYourFigure,setHouseFigure,setDuelResult,scorePro,scoreRegular} = useContext(AppContext);
+  const {mode,setResults,setYourFigure,setHouseFigure,setDuelResult,scorePro,scoreRegular,setHighScoreModal} = useContext(AppContext);
 
   const {proMode} = mode;
 
@@ -31,7 +31,9 @@ const Figures = () => {
 
     } else if (figurePickedHouse.beats.findIndex(b=>b===figurePicked.name)!==-1) {
       setDuelResult('LOSE');
+      setTimeout(()=>setHighScoreModal(true),2000);
       setTimeout(proMode?scorePro.reset:scoreRegular.reset,2000);
+
     } else {
       setDuelResult('DRAW');
     }

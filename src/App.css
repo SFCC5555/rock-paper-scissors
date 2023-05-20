@@ -242,3 +242,7 @@
     box-shadow: 0em 0em 10px var(--white);
     opacity: 75%;
 }
+
+label {
+    font-size: 0.6rem;
+}
