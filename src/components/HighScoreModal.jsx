@@ -22,9 +22,24 @@ const HighScoreModal = () => {
 
   function handleClick() {
 
-    setHighScoreModal(false);
-    proMode?scorePro.reset():scoreRegular.reset();
-    proMode?highScoreListPro.giveNickname(inputValue):highScoreListRegular.giveNickname(inputValue);
+    if (activeInput) {
+
+      if (inputValue) {
+
+        setHighScoreModal(false);
+        proMode?scorePro.reset():scoreRegular.reset();
+        proMode?highScoreListPro.giveNickname(inputValue):highScoreListRegular.giveNickname(inputValue);
+  
+      } else {
+        setError(true);
+      }
+
+    } else {
+
+      setHighScoreModal(false);
+      proMode?scorePro.reset():scoreRegular.reset();
+
+    }
 
   }
 
@@ -59,7 +74,7 @@ const HighScoreModal = () => {
                     <input value={inputValue} onChange={handleChange} id='nickname' type='text'className='w-3/4 border-2 rounded-md px-2 py-1 text-xs text-white hover:opacity-70 letterSpacing2px' style={{backgroundColor:'var(--secondBody)',borderColor:error?'var(--mainRed)':'var(--headerOutline)'}}></input>
                     {error&&<div className='error absolute top-12 translate-y-1' style={{color:'var(--mainRed)'}} >CAN´T BE BLANK</div>}
                 </div>}
-                <button onClick={()=>{inputValue?handleClick():setError(true)}} className='selectButton text-xs rounded-lg border-2 py-1 px-4 letterSpacing2px'>{activeInput?'CONFIRM':'CLOSE'}</button>
+                <button onClick={handleClick} className='selectButton text-xs rounded-lg border-2 py-1 px-4 letterSpacing2px'>{activeInput?'CONFIRM':'CLOSE'}</button>
             </div>
         </section>      
 
