@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { useMode } from "../../Hooks/useMode";
 import { useScore } from "../../Hooks/useScore";
+import { useHighScoreList } from "../../Hooks/useHighScoreList";
 
 export const AppContext = createContext({});
 
@@ -21,7 +22,12 @@ const AppContextProvider = ({children})=>{
 
     const [duelResult,setDuelResult] = useState('');
 
-    const [highScoreModal,setHighScoreModal] = useState(true);
+    const [highScoreModal,setHighScoreModal] = useState(false);
+
+    const highScoreListRegular = useHighScoreList('storageListRegular');
+    const highScoreListPro = useHighScoreList('storageListPro');
+
+    const [activeInput,setActiveInput] = useState(false);
 
     return <AppContext.Provider value={{mode,
                                         scoreRegular,
@@ -37,7 +43,11 @@ const AppContextProvider = ({children})=>{
                                         duelResult,
                                         setDuelResult,
                                         highScoreModal,
-                                        setHighScoreModal
+                                        setHighScoreModal,
+                                        highScoreListRegular,
+                                        highScoreListPro,
+                                        activeInput,
+                                        setActiveInput
                                         }}>
         {children}
     </AppContext.Provider>

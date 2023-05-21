@@ -12,7 +12,7 @@ import {data} from '../data'
 
 const Figures = () => {
 
-  const {mode,setResults,setYourFigure,setHouseFigure,setDuelResult,scorePro,scoreRegular,setHighScoreModal} = useContext(AppContext);
+  const {mode,setResults,setYourFigure,setHouseFigure,setDuelResult,scorePro,scoreRegular,setHighScoreModal,highScoreListRegular,highScoreListPro,setActiveInput} = useContext(AppContext);
 
   const {proMode} = mode;
 
@@ -31,8 +31,20 @@ const Figures = () => {
 
     } else if (figurePickedHouse.beats.findIndex(b=>b===figurePicked.name)!==-1) {
       setDuelResult('LOSE');
-      setTimeout(()=>setHighScoreModal(true),2000);
-      setTimeout(proMode?scorePro.reset:scoreRegular.reset,2000);
+
+      if (proMode) {
+
+        scorePro.score&&setTimeout(()=>highScoreListPro.update(scorePro.score),2100);
+        scorePro.score&&setTimeout(()=>setHighScoreModal(true),2000);
+        scorePro.score>highScoreListPro.highScoreList[4].score?setActiveInput(true):setActiveInput(false);
+
+      } else {
+        scoreRegular.score&&setTimeout(()=>highScoreListRegular.update(scoreRegular.score),2100);
+        scoreRegular.score&&setTimeout(()=>setHighScoreModal(true),2000);
+        scoreRegular.score>highScoreListRegular.highScoreList[4].score?setActiveInput(true):setActiveInput(false);
+      }
+
+      
 
     } else {
       setDuelResult('DRAW');
