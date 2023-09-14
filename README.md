@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/SFCC5555/rock-paper-scissors)
-- Live Site URL: [Add live site URL here](https://sfcc-rock-paper-scissors.netlify.app/)
+- Solution URL: [GitHub](https://github.com/SFCC5555/rock-paper-scissors)
+- Live Site URL: [Rock Paper Scissors](https://sfcc-rock-paper-scissors.netlify.app/)
 
 ## My process
 
@@ -47,6 +47,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Fernando Carrasco](https://sfcc5555.netlify.app/)
+- Website - [Fernando Carrasco Portfolio](https://sfcc5555.netlify.app/)
 - Frontend Mentor - [@SFCC5555](https://www.frontendmentor.io/profile/SFCC5555)
 
