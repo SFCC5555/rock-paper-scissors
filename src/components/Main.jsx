@@ -1,16 +1,20 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react';
 import { AppContext } from '../context/App/AppContext';
 import { Figures } from './Figures';
 import { Results } from './Results';
 
+// Main component responsible for rendering game components based on results
 const Main = () => {
+  // Accessing context values using the useContext hook
+  const { results } = useContext(AppContext);
 
-  const {results} = useContext(AppContext);
-
-  return (<>
-            {results?<Results />:<Figures />}
-         </>)
-  
+  return (
+    <>
+      {/* Conditional rendering based on the 'results' state */}
+      {results ? <Results /> : <Figures />}
+    </>
+  );
 }
 
-export {Main};
+// Exporting the 'Main' component
+export { Main };

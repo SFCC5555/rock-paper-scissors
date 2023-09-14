@@ -1,58 +1,62 @@
+/* Importing the 'Barlow Semi Condensed' font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
 
+/* Include base, utilities, and components styles from Tailwind CSS */
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
 
-
+/* Resetting default styles for all elements */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Define CSS custom properties (variables) for color and font */
 :root {
+    --mainFont: 'Barlow Semi Condensed', sans-serif; /* Main font for the page */
 
-  --mainFont: 'Barlow Semi Condensed', sans-serif;
+    /* Color variables defined using HSL (Hue, Saturation, Lightness) */
+    --mainYellow: hsl(39, 89%, 49%);
+    --secondYellow: hsl(40, 84%, 53%);
+    --mainBlue: hsl(230, 89%, 62%);
+    --secondBlue: hsl(230, 89%, 65%);
+    --mainRed: hsl(349, 71%, 52%);
+    --secondRed: hsl(349, 70%, 56%);
+    --mainPurple: hsl(261, 73%, 60%);
+    --secondPurple: hsl(261, 72%, 63%);
+    --mainCyan: hsl(189, 59%, 53%);
+    --secondCyan: hsl(189, 58%, 57%);
 
-  --mainYellow: hsl(39, 89%, 49%);
-  --secondYellow: hsl(40, 84%, 53%);
-  --mainBlue: hsl(230, 89%, 62%);
-  --secondBlue: hsl(230, 89%, 65%);
-  --mainRed: hsl(349, 71%, 52%);
-  --secondRed: hsl(349, 70%, 56%);
-  --mainPurple: hsl(261, 73%, 60%);
-  --secondPurple: hsl(261, 72%, 63%);
-  --mainCyan: hsl(189, 59%, 53%);
-  --secondCyan: hsl(189, 58%, 57%);
-
-  --darkText: hsl(229, 25%, 31%);
-  --scoreText: hsl(229, 64%, 46%);
-  --headerOutline: hsl(217, 16%, 45%);
-
-  --mainBody: hsl(214, 47%, 23%);
-  --secondBody: hsl(237, 49%, 15%);
-
-  --white: white;
-
+    /* Text and background color variables */
+    --darkText: hsl(229, 25%, 31%);
+    --scoreText: hsl(229, 64%, 46%);
+    --headerOutline: hsl(217, 16%, 45%);
+    --mainBody: hsl(214, 47%, 23%);
+    --secondBody: hsl(237, 49%, 15%);
+    --white: white; /* White color */
 }
 
+/* Apply a 2px letter-spacing to elements with the class 'letterSpacing2px' */
 .letterSpacing2px {
-  letter-spacing: 2px;
+    letter-spacing: 2px;
 }
 
+/* Styling for the body element */
 body {
-  height: 100vh;
-  font-family: var(--mainFont);
-  letter-spacing: 1px;
-  background-image: linear-gradient(to bottom, var(--mainBody), var(--secondBody));
-  padding: 20px;
-  padding-top: 30px;
-  padding-bottom: 80px;
+    height: 100vh; /* Set the height of the body to 100% of the viewport height */
+    font-family: var(--mainFont);
+    letter-spacing: 1px; 
+    background-image: linear-gradient(to bottom, var(--mainBody), var(--secondBody));
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 80px;
 }
 
+/* Media query for screens with a minimum width of 700px */
 @media screen and (min-width: 700px) {
-  body {
-    padding-bottom: 50px;
-  }
+    body {
+        padding-bottom: 50px; /* Reduce bottom padding for larger screens */
+    }
 }

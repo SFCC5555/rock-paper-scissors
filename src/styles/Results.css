@@ -1,100 +1,98 @@
-
+/* Styling for elements with the class 'shadowClass' when hovered */
 .shadowClass:hover {
-    box-shadow: 0em 0em 10px var(--white);
+    box-shadow: 0em 0em 10px var(--white); /* Add a box shadow effect on hover */
 }
 
+/* Styling for elements with the class 'figureImage' */
 .figureImage {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    
+    width: 130px; /* Set width to 130px */
+    height: 130px; /* Set height to 130px */
+    border-radius: 50%; /* Creates a circular shape */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    z-index: 1; /* Sets the stacking order to be above other elements */
 }
 
-
+/* Styling for elements with the class 'paperResult' */
 .paperResult {
     background-color: var(--secondBlue);
     box-shadow:  -0.1em 0.25em 0px var(--mainBlue);
 }
-
+/* Styling for elements with the class 'scissorsResult' */
 .scissorsResult {
     background-color: var(--secondYellow);
     box-shadow:  -0.1em 0.25em 0px var(--mainYellow);
 }
-
+/* Styling for elements with the class 'rockResult ' */
 .rockResult {
     background-color: var(--secondRed);
     box-shadow:  -0.1em 0.25em 0px var(--mainRed);
 }
-
+/* Styling for elements with the class 'spockResult' */
 .spockResult {
     background-color: var(--secondCyan);
     box-shadow:  -0.1em 0.25em 0px var(--mainCyan);
 }
-
+/* Styling for elements with the class 'lizardResult' */
 .lizardResult {
     background-color: var(--secondPurple);
     box-shadow:  -0.1em 0.25em 0px var(--mainPurple);
 }
 
-
+/* Styling for elements with the class 'figureContainer' */
 .figureContainer {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background-color: var(--secondBody);
+    width: 130px; /* Set width to 130px */
+    height: 130px; /* Set height to 130px */
+    border-radius: 50%; /* Creates a circular shape */
+    background-color: var(--secondBody); /* Background color set to a custom variable */
 }
 
+/* Styling for elements with the class 'figureResult' */
 .figureResult {
-    animation-name: figureResultAnimation;
-    animation-duration: 1s;
-    position: absolute;
+    animation-name: figureResultAnimation; /* Applies an animation named 'figureResultAnimation' */
+    animation-duration: 1s; /* Duration of the animation */
+    position: absolute; /* Positioned absolutely within its containing element */
 }
 
+/* Keyframes animation named 'figureResultAnimation' */
 @keyframes figureResultAnimation {
-
-    0%{width: 0px;height: 0px;}
-    80%{width: 0px;height: 0px;}
-    81%{width: 195px;height: 195px;}
-    100%{width: 130px;height: 130px;}
-    
+    0% { width: 0px; height: 0px; }
+    80% { width: 0px; height: 0px; }
+    81% { width: 195px; height: 195px; }
+    100% { width: 130px; height: 130px; }
 }
 
+/* Styling for elements with the class 'winner' */
 .winner {
-    position: absolute;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    box-shadow:  0px 0px 50px white;
-    animation-name: winnerAnimation;
-    animation-duration: 2s;
-    opacity: 35%;
+    position: absolute; /* Positioned absolutely within its containing element */
+    width: 130px; /* Set width to 130px */
+    height: 130px; /* Set height to 130px */
+    border-radius: 50%; /* Creates a circular shape */
+    box-shadow: 0px 0px 50px white; /* Adds a white box shadow effect */
+    animation-name: winnerAnimation; /* Applies an animation named 'winnerAnimation' */
+    animation-duration: 2s; /* Duration of the animation */
+    opacity: 35%; /* Set opacity to 35% */
 }
 
-
+/* Keyframes animation named 'winnerAnimation' */
 @keyframes winnerAnimation {
-
-    0%{opacity: 0%;}
-    50%{opacity: 0%;}
-    90%{opacity: 40%;}
-    100%{opacity: 35%;}
-    
+    0% { opacity: 0%; }
+    50% { opacity: 0%; }
+    90% { opacity: 40%; }
+    100% { opacity: 35%; }
 }
 
+/* Styling for elements with the class 'resultSection' */
 .resultSection {
-    animation-name: resultSectionAnimation;
-    animation-duration: 2.5s;
+    animation-name: resultSectionAnimation; /* Applies an animation named 'resultSectionAnimation' */
+    animation-duration: 2.5s; /* Duration of the animation */
 }
 
-
+/* Keyframes animation named 'resultSectionAnimation' */
 @keyframes resultSectionAnimation {
-
-    0%{opacity: 0%;}
-    60%{opacity: 0%;}
-    100%{opacity: 100%;}
-    
+    0% { opacity: 0%; }
+    60% { opacity: 0%; }
+    100% { opacity: 100%; }
 }
 
